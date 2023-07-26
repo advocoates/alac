@@ -15,7 +15,7 @@
 lib_LTLIBRARIES = libalac.la
 
 libalac_la_CPPFLAGS = -Wno-multichar
-libalac_la_LDFLAGS = -version-info @ALAC_VERSION@
+libalac_la_LDFLAGS = -version-info @ALAC_VERSION@ -no-undefined -static-libgcc -static-libstdc++
 
 libalac_la_SOURCES = \
     EndianPortable.c \
