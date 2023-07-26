@@ -15,6 +15,7 @@ $(SRCDIR)/ALACAudioTypes.h \
 $(SRCDIR)/ALACBitUtilities.h\
 $(SRCDIR)/ALACDecoder.h \
 $(SRCDIR)/ALACEncoder.h \
+$(SRCDIR)/LibALAC.h \
 $(SRCDIR)/dplib.h \
 $(SRCDIR)/matrixlib.h
 
@@ -23,6 +24,7 @@ $(SRCDIR)/EndianPortable.c \
 $(SRCDIR)/ALACBitUtilities.c \
 $(SRCDIR)/ALACDecoder.cpp \
 $(SRCDIR)/ALACEncoder.cpp \
+$(SRCDIR)/LibALAC.cpp \
 $(SRCDIR)/ag_dec.c \
 $(SRCDIR)/ag_enc.c \
 $(SRCDIR)/dp_dec.c \
@@ -35,6 +37,7 @@ EndianPortable.o \
 ALACBitUtilities.o \
 ALACDecoder.o \
 ALACEncoder.o \
+LibALAC.o \
 ag_dec.o \
 ag_enc.o \
 dp_dec.o \
@@ -57,6 +60,9 @@ ALACDecoder.o : ALACDecoder.cpp
 ALACEncoder.o : ALACEncoder.cpp
 	$(CC) -I $(INCLUDES) $(CFLAGS) ALACEncoder.cpp
 
+LibALAC.o : LibALAC.cpp
+	$(CC) -I $(INCLUDES) $(CFLAGS) LibALAC.cpp
+
 ag_dec.o : ag_dec.c
 	$(CC) -I $(INCLUDES) $(CFLAGS) ag_dec.c
 
@@ -77,4 +83,3 @@ matrix_enc.o : matrix_enc.c
 		
 clean:
 	-rm $(OBJS) libalac.a
-
