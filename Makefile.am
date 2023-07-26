@@ -12,29 +12,12 @@
 ## See the License for the specific language governing permissions and
 ## limitations under the License.
 
-lib_LTLIBRARIES = libalac.la
+ACLOCAL_AMFLAGS = -I m4
 
-libalac_la_CPPFLAGS = -Wno-multichar
-libalac_la_LDFLAGS = -version-info @ALAC_VERSION@
+AM_CXXFLAGS = -I$(top_srcdir)/codec -g -O3 -c
 
-libalac_la_SOURCES = \
-    EndianPortable.c \
-    ALACBitUtilities.c \
-    ALACDecoder.cpp \
-    ALACEncoder.cpp \
-    LibALAC.cpp \
-    ag_dec.c \
-    ag_enc.c \
-    dp_dec.c \
-    dp_enc.c \
-    matrix_dec.c \
-    matrix_enc.c
+if EXAMPLE
+EXAMPLE_DIR = convert-utility
+endif
 
-pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = alac.pc
-
-# Install to include/alac
-alacincludedir = $(includedir)/alac
-
-# Install everything
-alacinclude_HEADERS = *.h
+SUBDIRS = codec $(EXAMPLE_DIR)
