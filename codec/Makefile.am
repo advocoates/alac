@@ -22,6 +22,7 @@ libalac_la_SOURCES = \
     ALACBitUtilities.c \
     ALACDecoder.cpp \
     ALACEncoder.cpp \
+    LibALAC.cpp \
     ag_dec.c \
     ag_enc.c \
     dp_dec.c \
