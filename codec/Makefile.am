@@ -12,6 +12,8 @@
 ## See the License for the specific language governing permissions and
 ## limitations under the License.
 
+AM_CXXFLAGS = -fdeclspec
+
 lib_LTLIBRARIES = libalac.la
 
 libalac_la_CPPFLAGS = -Wno-multichar
