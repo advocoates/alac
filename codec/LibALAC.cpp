@@ -1,6 +1,7 @@
 // LibALAC.cpp : Defines the exported functions for the DLL.
 #include <utility>
 #include <limits.h> 
+#include <cstdlib>
 #include "LibALAC.h"
 #include "ALACEncoder.h"
 #include "ALACDecoder.h"
