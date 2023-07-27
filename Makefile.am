@@ -14,7 +14,7 @@
 
 ACLOCAL_AMFLAGS = -I m4
 
-AM_CXXFLAGS = -I$(top_srcdir)/codec -g -O3 -c
+AM_CXXFLAGS = -I$(top_srcdir)/codec -g -O3 -c -fdeclspec
 
 if EXAMPLE
 EXAMPLE_DIR = convert-utility
